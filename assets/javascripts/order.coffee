@@ -9,7 +9,7 @@ $ ->
 
       return false
 
-    #yaCounter21993178.reachGoal('new_order')
+    yaCounter25514660.reachGoal('new_order')
 
     $('.modal-overlay').bind 'click', ->
       hide_thank_you()
@@ -43,6 +43,8 @@ $ ->
 
     $('.modal-overlay').bind 'click', ->
       hide_thank_you()
+
+    yaCounter25514660.reachGoal('new_order')
 
     $.post '/orders.json', {'order[username]': $('input[name=username1]').val(), 'order[phone]': $('input[name=phone1]').val()}, (data) =>
 
