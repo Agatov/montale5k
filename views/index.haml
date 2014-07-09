@@ -1,0 +1,62 @@
+#intro
+  .wrapper
+
+    -#.phone
+      8 (495) 792-89-59
+
+    .desc
+      Montale со скидкой 30% до
+      %span.red 17 июля
+
+
+    .about
+      Оставьте заявку, чтобы получить скидку 30% на всю линию ароматов Montale
+
+    .form-container
+      .top-form
+        %input{type: :text, name: 'username', placeholder: 'Введите ваше имя'}
+        %input{type: :text, name: 'phone', placeholder: 'Введите ваш номер телефона'}
+        .button#order-button
+          Получить каталог
+        %br
+        .after
+          Ваши контактные данные в безопасности и не будут переданы третьим лицам.
+
+      .form-text
+        Мы работаем от официального дилера в Москве и продаем только оригинальную продукцию.
+        -#%span.red
+          50 мл &nbsp; -
+          %span.strike 5600
+
+          2800 рублей
+        -#%span.red
+          100 мл -
+          %span.strike 8800
+          4400 рублей
+
+
+.modal-overlay
+.modal-thank-you
+  .header
+    Спасибо!
+  .body
+    Мы свяжемся с вами в течение дня.
+
+
+    %button#hide-thank-you
+      Я буду ждать!
+
+.modal-dialog
+  .header
+    Оставьте ваши контакты
+  .body
+    .to-do
+      Чтобы получить каталог со скидкой 50%, введите контакты в форму ниже и мы с вами свяжемся.
+    .form
+      %input{type: :text, name: :username1, placeholder: 'Введите ваше имя'}
+      %input{type: :text, name: :phone1, placeholder: 'Введите ваш телефон'}
+      %button#send-order
+        Получить каталог
+
+    .after
+      Ваши контактные данные в безопасности и не будут переданы третьим лицам.
