@@ -23,7 +23,7 @@ class Application < Sinatra::Base
     serve '/fonts', from: 'assets/fonts'
 
     css :application, '/css/application.css', %w(/css/index.css)
-    js :application, '/js/application.js', %w( /js/jquery-1.9.1.js /js/order.js)
+    js :application, '/js/application.js', %w( /js/jquery-1.9.1.js /js/initializer.js /js/form.js)
 
     css_compression :sass
     js_compression :jsmin
@@ -33,16 +33,12 @@ class Application < Sinatra::Base
     haml :index
   end
 
-  get '/policy' do
-    haml :policy
-  end
-
   post '/orders.json' do
 
     message = "#{params[:order][:username]}. #{params[:order][:phone]}."
 
     Pony.mail ({
-        to: 'montalemsk@gmail.com, abardacha@gmail.com, kostyadt@gmail.com',
+        to: 'abardacha@gmail.com',
         subject: I18n.t('email.title', locale: 'ru'),
         body: message,
         via: :smtp,
