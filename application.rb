@@ -22,7 +22,7 @@ class Application < Sinatra::Base
     serve '/js', from: 'assets/javascripts'
     serve '/fonts', from: 'assets/fonts'
 
-    css :application, '/css/application.css', %w(/css/index.css)
+    css :application, '/css/application.css', %w(/css/reset.css /css/index.css)
     js :application, '/js/application.js', %w( /js/jquery-1.9.1.js /js/initializer.js /js/form.js)
 
     css_compression :sass
@@ -37,20 +37,20 @@ class Application < Sinatra::Base
 
     message = "#{params[:order][:username]}. #{params[:order][:phone]}."
 
-    Pony.mail ({
-        to: 'abardacha@gmail.com',
-        subject: I18n.t('email.title', locale: 'ru'),
-        body: message,
-        via: :smtp,
-        via_options: {
-            address: 'smtp.gmail.com',
-            port: 587,
-            enable_starttls_auto: true,
-            user_name: 'montalemsk',
-            password: 'kotkotkot232323',
-            authentication: :plain
-        }
-    })
+    #Pony.mail ({
+    #    to: 'abardacha@gmail.com',
+    #    subject: I18n.t('email.title', locale: 'ru'),
+    #    body: message,
+    #    via: :smtp,
+    #    via_options: {
+    #        address: 'smtp.gmail.com',
+    #        port: 587,
+    #        enable_starttls_auto: true,
+    #        user_name: 'montalemsk',
+    #        password: 'kotkotkot232323',
+    #        authentication: :plain
+    #    }
+    #})
 
     content_type :json
     {status: :success}.to_json
