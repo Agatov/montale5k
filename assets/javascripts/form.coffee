@@ -30,7 +30,7 @@ $ ->
     )
 
     show_thank_you()
-#    reachGoal 'new_order'
+    reachGoal 'new_order'
 #    track 'New order', {name: username.val(), phone: phone.val(), email: email.val()}
 
 
@@ -62,4 +62,4 @@ window.shake = (field, i) ->
 
 
 window.reachGoal = (goal) ->
-  yaCounter24427955.reachGoal goal
+  yaCounter25569155.reachGoal goal
